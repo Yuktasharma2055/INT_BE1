@@ -1,5 +1,5 @@
-import Express from "express";
-import mongoose from "mongoose";
+const express = require("express");
+const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
   Date: Date,
@@ -9,4 +9,4 @@ const userSchema = new mongoose.Schema({
   priceUnit: String,
 });
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = userSchema;

@@ -1,7 +1,11 @@
-import express from "express";
-import mongoose from "mongoose";
+const express = require("express");
+const mongoose = require("mongoose");
+//const userSchema = require("./buy_database");
+const cors = require("cors");
 
-import cors from "cors";
+// import buy from "./routes/buy";
+
+//const buy = require("./routes/buy");
 
 const app = express();
 app.use(express.json());
@@ -20,7 +24,7 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model("User", userSchema);
 
 mongoose.connect(
-  "mongodb://localhost:27017/bitDB",
+  "mongodb://localhost:27017/myCoins",
   {
     userNewUrlParser: true,
     useUnifiedTopology: true,
@@ -32,6 +36,10 @@ mongoose.connect(
 
 // import RouterDB from "./routes.js";
 // app.use(RouterDB);
+
+// available routes
+
+app.use(require("./routes/buy"));
 
 app.listen(port, () =>
   console.log(`server running at : http://localhost:${port}`)
