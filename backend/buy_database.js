@@ -1,12 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
 
-const userSchema = new mongoose.Schema({
-  Date: Date,
-  buyer: String,
-  coinName: String,
-  coinValue: String,
-  priceUnit: String,
+const cryptoSchema = new mongoose.Schema({
+  cryptoName: String,
+  qtyHoldings: Number,
 });
 
-module.exports = userSchema;
+module.exports = cryptoSchema;

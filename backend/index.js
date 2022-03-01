@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-//const userSchema = require("./buy_database");
+const cryptoSchema = require("./buy_database");
 const cors = require("cors");
 
 // import buy from "./routes/buy";
@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 const port = 5001;
 
-const userSchema = new mongoose.Schema({
+/*const userSchema = new mongoose.Schema({
   Date: Date,
   buyer: String,
   coinName: String,
@@ -21,12 +21,15 @@ const userSchema = new mongoose.Schema({
   priceUnit: String,
 });
 
-const User = mongoose.model("User", userSchema);
+
+*/
+
+const Crypto = new mongoose.model("Crypto", cryptoSchema);
 
 mongoose.connect(
   "mongodb://localhost:27017/myCoins",
   {
-    userNewUrlParser: true,
+    useNewUrlParser: true,
     useUnifiedTopology: true,
   },
   () => {
@@ -34,13 +37,8 @@ mongoose.connect(
   }
 );
 
-// import RouterDB from "./routes.js";
-// app.use(RouterDB);
-
-// available routes
-
 app.use(require("./routes/buy"));
 
 app.listen(port, () =>
-  console.log(`server running at : http://localhost:${port}`)
+  console.log(`Server running at: http://localhost:${port}`)
 );
