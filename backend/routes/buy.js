@@ -41,7 +41,7 @@ router.get("/cryptocoins", async (req, res) => {
   res.send(result);
 });
 
-//post route to buy requests
+//post route to buy crypto requests
 
 router.post("/cryptocoins/buy", async (req, res) => {
   let { cryptoName, amount } = req.body;
