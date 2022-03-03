@@ -47,9 +47,11 @@ namely ,
 
 ## Installation
 
-Since this project will hold both the client application and the server application (frontend and backend server running simultaneously) there will be node modules in two different places. First run `npm install` from the root.
-After this you will run `npm run-script install-all` from the root.
-From now on run this command anytime you want to install all modules again. s
+Since this project will hold both the client application and the server application (frontend and backend server running simultaneously) there will be node modules in two different places. First go inside 'frontend' directory and run `npm install`
+After this you will go inside backend directory and runrun `npm install` from the root.
+
+- After this , you should start both frontend and backend servers from their respective directories using `npm start`
+  From now on run this command anytime you want to install all modules again. s
 
 ## File structure
 
