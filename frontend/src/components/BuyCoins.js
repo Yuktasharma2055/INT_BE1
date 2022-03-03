@@ -2,12 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
 
-const Container = styled.div`
-  height: 150px;
-  align-items: center;
-  justify-content: space-between;
-`;
-
 const Wrapper = styled.div`
   flex: 1;
   padding: 10px 20px;

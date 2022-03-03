@@ -1,8 +1,7 @@
 import "./App.css";
 import BuyCoins from "./components/BuyCoins";
-import axios from "axios";
 
-import React, { Component } from "react";
+import React from "react";
 import Coins from "./components/Coins";
 
 function App() {
