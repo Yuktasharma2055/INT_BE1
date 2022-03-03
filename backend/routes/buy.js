@@ -41,10 +41,11 @@ router.get("/cryptocoins", async (req, res) => {
   res.send(result);
 });
 
-//post route to buy crypto requests
+//post route to buy cryptos
 
 router.post("/cryptocoins/buy", async (req, res) => {
-  let { cryptoName, amount } = req.body;
+  let { cryptoName, amount } = await req.body;
+  console.log(req.body);
   await Crypto.findOneAndUpdate(
     { cryptoName: cryptoName },
     {
